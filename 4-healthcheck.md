@@ -9,9 +9,10 @@ Un Healthcheck consta de un comando que se ejecuta periódicamente dentro del co
 --health-cmd="<comando> || exit 1"
 ```
 Define el comando que se ejecutará para verificar el estado del contenedor. Este comando depende del tipo de aplicación que se está ejecutando en el contenedor y de la mejor manera de verificar su estado de salud. 
+
 El **|| exit 1** se utiliza para asegurarse de que el comando retorne un código de salida diferente de 0 si la verificación de salud falla. Esto es importante porque Docker interpreta un código de salida diferente de 0 como un fallo en el Healthcheck, lo que puede llevar a que Docker marque el contenedor como no saludable y tome las medidas configuradas por ejemplo reiniciar el contenedor.
 Si no se incluye || exit 1, el comando debe ser cuidadosamente diseñado para devolver un código de salida diferente de 0 en caso de fallo, de lo contrario Docker puede interpretar incorrectamente el estado de salud del contenedor.
-
+### Ejemplos de comandos para verificar el estado del contenedor
 Para un servidor web (usando curl):
 
 --health-cmd="curl -f http://localhost/ || exit 1"
@@ -69,8 +70,8 @@ Define un período de gracia inicial durante el cual los fallos del Healthcheck 
 --health-start-period=<valor><unidad>
 ```
 
-### Para crear y ejecutar los siguientes contenedores usar la imagen de nginx:alpine
-### Ejecutar un contenedor con un healthcheck que valide que el contenedor está funcionando
+### Ejemplo
+_Puedes copiar y ejecutar directamente el comando_
 
 ```
 docker run -d --name server-nginx --health-cmd="curl http://localhost" --health-interval=3s --health-start-period=5s --health-retries=3 --health-timeout=10s nginx:alpine
