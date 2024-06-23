@@ -31,12 +31,13 @@ Esta instrucción se utiliza para definir variables de entorno dentro del conten
 ```
 docker build -t <nombre imagen>:<version> .
 ```
-La opción -t se utiliza para etiquetar la imagen que se está construyendo con un nombre y una versión. <nombre_imagen> es el nombre que le quieres dar a la imagen, y <version> es la versión. Por ejemplo, myapp:1.0.
-*.* Este punto indica al comando docker build que busque el Dockerfile en el directorio actual. Especifica la ubicación del contexto de la construcción, que incluye el Dockerfile y cualquier otro archivo necesario para la construcción de la imagen.
+- **-t** esta opción se utiliza para etiquetar la imagen que se está construyendo con un nombre y una versión.
+- <nombre_imagen>:<version> por ejemplo: myapp:1.0
+- **.** este punto indica al comando docker build que busque el Dockerfile en el directorio actual, es decir especifica la ubicación del contexto de la construcción que incluye el Dockerfile y cualquier otro archivo necesario para la construcción de la imagen.
 
-
+## Ejemplo
 ### Colocar las siguientes instrucciones en un Dockerfile
-1. Instalar el sistema operativo centos 7
+1. Instalar el sistema operativo Centos 7
 2. Actualizar el sistema operativo
 3. Instalar apache
 4. Copiar los archivos desde ./web a /var/www/html
