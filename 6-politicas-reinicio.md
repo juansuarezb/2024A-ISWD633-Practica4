@@ -1,14 +1,14 @@
 # Políticas de reinicio
 
 ## Para esta parte de la práctica
-Vas a crear contenedores a partir de imágenes específicas y probar cada una de las políticas de reinicio.
-Analice las instrucciones de cada Dockerfile 
-Use la imagen respectiva para crear y ejecutar el contenedor y observar lo que sucede verificando 
-el cumplimiento de la política de reinicio.
+1. Usa el archivo Dockerfile que se encuentra en cada carpeta con el nombre de la política de reinicio para crear una imagen. Analiza las instrucciones de cada Dockerfile 
+2. Usa la imagen para ejecutar un contenedor agregando la política respectiva y observar lo que sucede verificando el cumplimiento de la política de reinicio
 
 ### restart = no
-
-No reinicia el contenedor bajo ninguna razón
+No reinicia el contenedor bajo ninguna razón. Esta es la política por default
+```
+docker run -d --name <nombre contenedor> <nombre imagen>
+```
 
 ### restart = always
 
