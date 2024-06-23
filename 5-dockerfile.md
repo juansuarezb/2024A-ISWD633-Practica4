@@ -1,8 +1,7 @@
 # Dockerfile
 Un Dockerfile es un archivo de texto plano que contiene una serie de instrucciones que Docker utiliza para construir una imagen de contenedor Docker. Este conjunto de instrucciones define cómo se debe configurar y construir una imagen de contenedor, incluyendo qué sistema operativo base usar, qué software instalar, qué archivos copiar en el contenedor y cómo configurar el entorno de ejecución.
-<div align="center">
  ![Dockerfile](imagenes/relacion.PNG)
-</div>
+
 
 Tradicionalmente, el archivo docker no tiene extensión. Simplemente se denomina Dockerfile sin ningún tipo de extensión. Adicionalmente, los Dockerfiles pueden ser creados usando la extensión .dockerfile. Esto se utiliza cuando hay una necesidad de almacenar múltiples archivos docker en un solo directorio.
 Las instrucciones en un Dockerfile son simples y están diseñadas para ser leídas y comprendidas fácilmente. 
@@ -52,11 +51,13 @@ docker build -t <nombre imagen>:<version> .
 
  
 ### Ejecutar el archivo Dockerfile y construir una imagen en la versión 1.0
+_Puedes copiar y ejecutar directamente. No olvides verificar en qué directorio se encuentra el archivo Dockerfile
 ```
 
 ```
 
 **¿Cuántos pasos se han ejecutado?**
+# RESPONDER 
 
 ### Inspeccionar la imagen creada
 # COMPLETAR CON UNA CAPTURA
@@ -85,21 +86,27 @@ Docker usa un mecanismo de caché cuando crea imágenes para acelerar el proceso
 
 ### Identificar imágenes huérfanas
 ```
-
+docker images -f "dangling=true"
 ```
 
 ### Listar los IDS de las imágenes huérfanas
 ```
-
+docker images -f "dangling=true" -q
 ```
 
 ### Eliminar imágenes huérfanas
+Este comando eliminará todas las imágenes que no estén asociadas a ningún contenedor en ejecución. Antes de ejecutarlo, asegúrate de revisar las imágenes que serán eliminadas para evitar la pérdida de imágenes importantes. 
+```
+docker image prune
 ```
 
+### Para Ejecutar un archivo Dockerfile que tiene otro nombre
+```
+docker build -t <nombre imagen>:<version> -f <ruta y nombre del Dockerfile> .
 ```
 
-### Ejecutar un archivo Dockerfile que tiene otro nombre
-```
-docker build -t <nombre imagen>:<version> -f <ruta y nommbre del Dockerfile> .
-```
+## Por ejemplo
+docker build -t imagen:1.0 -f Dockerfile-custom .
+
+
 
