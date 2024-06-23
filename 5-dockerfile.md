@@ -1,5 +1,5 @@
 # Dockerfile
-Un Dockerfile es un archivo de texto plano que contiene una serie de instrucciones que Docker utiliza para construir una imagen de contenedor Docker. Este conjunto de instrucciones define cómo se debe configurar y construir una imagen de contenedor, incluyendo qué sistema operativo base usar, qué software instalar, qué archivos copiar en el contenedor y cómo configurar el entorno de ejecución.
+Un Dockerfile es un archivo de texto plano **sin extensión** que contiene una serie de instrucciones que Docker utiliza para construir una imagen de contenedor Docker. Este conjunto de instrucciones define cómo se debe configurar y construir una imagen de contenedor, incluyendo qué sistema operativo base usar, qué software instalar, qué archivos copiar en el contenedor y cómo configurar el entorno de ejecución.
 Las instrucciones en un Dockerfile son simples y están diseñadas para ser leídas y comprendidas fácilmente. 
 
 ### FROM 
@@ -36,15 +36,8 @@ docker build -t <nombre imagen>:<version> .
 - **.** este punto indica al comando docker build que busque el Dockerfile en el directorio actual, es decir especifica la ubicación del contexto de la construcción que incluye el Dockerfile y cualquier otro archivo necesario para la construcción de la imagen.
 
 ## Ejemplo
-### Colocar las siguientes instrucciones en un Dockerfile
-1. Instalar el sistema operativo Centos 7
-2. Actualizar el sistema operativo
-3. Instalar apache
-4. Copiar los archivos desde ./web a /var/www/html
-5. Exponer el puerto 80
-6. Ejecutar apache
-
-![mapeo](imagenes/dockerfile.PNG)
+### Colocar las siguientes instrucciones en un Dockerfile, 
+![Dockerfile](imagenes/Dockerfile.PNG)
 
 - apachectl: Es el script de control para el servidor web Apache. Se utiliza para iniciar, detener y controlar el servidor web.
 - -D FOREGROUND: Esta opción le dice a Apache que se ejecute en primer plano. Por defecto, Apache se ejecuta como un servicio en segundo plano. Sin embargo, en un contenedor Docker, es preferible que el proceso principal (en este caso, Apache) se ejecute en primer plano para que Docker pueda monitorear el estado del proceso. Si Apache se ejecutara en segundo plano, Docker no podría saber si el servidor web está funcionando correctamente o no.
