@@ -11,24 +11,20 @@ docker run -d --name <nombre contenedor> <nombre imagen>
 ```
 
 ### restart = always
-
-Si se detiene manualmente, no se reinicia. El contenedor es iniciado nuevamente cuando el demonio (servicio) reinicia
-
+Reinicia siempre el contenedor si se detiene. Si se detiene manualmente, sólo se reiniciará cuando se reinicie el demonio Docker o cuando se reinicie manualmente el propio contenedor
 ```
 docker run -d --name <nombre contenedor> --restart always <nombre imagen>
 ```
 
 ### restart = unless-stopped
 
-Se reinicia siempre y cuando no se detenga manualmente
-
+Similar a always, excepto que cuando el contenedor se detiene (manualmente o de otra manera), no se reinicia incluso después de reiniciar el demonio Docker.
 ```
 docker run -d --name <nombre contenedor> --restart unless-stopped <nombre imagen>
 ```
 
 ### restart = on-failure
-
-Se reinicia únicamente cuando hay una falla en la ejecución del código. No se reinicia si el contenedor se detiene manualmente.
+Se reinicia únicamente cuando hay una falla en la ejecución del código que se manifiesta con un código diferente de 0. No se reinicia si el contenedor se detiene manualmente.
 
 ```
 docker run -d --name <nombre contenedor> --restart on-failure <nombre imagen>
