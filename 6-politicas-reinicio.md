@@ -1,7 +1,7 @@
 # Políticas de reinicio
 
-**Para esta parte de la práctica**
-Se van a crear imágenes para probar cada una de las políticas de reinicio.
+## Para esta parte de la práctica
+Vas a crear contenedores a partir de imágenes específicas y probar cada una de las políticas de reinicio.
 Analice las instrucciones de cada Dockerfile 
 Use la imagen respectiva para crear y ejecutar el contenedor y observar lo que sucede verificando 
 el cumplimiento de la política de reinicio.
