@@ -28,4 +28,13 @@ Limitar la memoria RAM que el contenedor puede utilizar a 300 megabytes y que el
 docker run -d --name server-nginx --memory=300m --memory-swap=1g nginx:alpine
 ```
 **¿Cuántos megabytes de memoria swap puede utilizar el contenedor creado anteriormente?**
-## COMPLETAR CON LA RESPUESTAS
+docker run -d --name server-nginx --memory=300m --memory-swap=1g nginx:alpine
+
+Cálculo de la memoria swap máxima disponible:
+1 gigabyte (1g) equivale a 1024 megabytes (MB).
+Por lo tanto:
+
+Memoria swap máxima = memory-swap − memory
+Memoria swap máxima = 1024 MB − 300 MB = 724 MB
+
+El contenedor puede utilizar 724 megabytes de memoria swap.
