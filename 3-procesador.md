@@ -10,7 +10,9 @@ Asignar núcleos de CPU específicos:
 ```
 
 **¿Como saber el numero de procesadores virtuales que tiene una máquina?**
-## COMPLETAR
+Los procesadores virtuales (o hilos de CPU) indican cuántas tareas puede ejecutar simultáneamente el sistema. 
+
+docker run --rm alpine nproc
 
 ## Ejemplos
 _Puedes copiar y ejecutar directamente cada uno de los comandos_
